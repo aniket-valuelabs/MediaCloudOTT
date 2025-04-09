@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct SignUpView: View {
     @State private var firstName = ""
@@ -15,6 +16,8 @@ struct SignUpView: View {
     @State private var mobileNumber = ""
     
     @State private var errorMessage: String?
+    
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         NavigationView {
@@ -39,7 +42,9 @@ struct SignUpView: View {
                     Button(action: {
                         if validateInputs() {
                             // Proceed with registration logic here
-                            print("Registration successful!")
+
+                        saveUser()
+                        print("Registration successful!")
                         } else {
                             // Display error message
                         }
@@ -92,6 +97,11 @@ struct SignUpView: View {
         }
         
         return true
+    }
+    func saveUser() {
+        let newUser = User(firstName: firstName, lastName: lastName, dob: dob, email: email, mobileNumber: mobileNumber)
+        modelContext.insert(newUser)
+        try? modelContext.save()
     }
 }
 
