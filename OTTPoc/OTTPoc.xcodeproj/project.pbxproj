@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		685CF33A2DA3978B00D6990D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 685CF31F2DA3978900D6990D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 685CF3262DA3978A00D6990D;
+			remoteInfo = OTTPoc;
+		};
+		685CF3442DA3978B00D6990D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 685CF31F2DA3978900D6990D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 685CF3262DA3978A00D6990D;
+			remoteInfo = OTTPoc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		685CF3272DA3978A00D6990D /* OTTPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OTTPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		685CF3392DA3978B00D6990D /* OTTPocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTTPocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		685CF3432DA3978B00D6990D /* OTTPocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTTPocUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		685CF3292DA3978A00D6990D /* OTTPoc */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OTTPoc;
+			sourceTree = "<group>";
+		};
+		685CF33C2DA3978B00D6990D /* OTTPocTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OTTPocTests;
+			sourceTree = "<group>";
+		};
+		685CF3462DA3978B00D6990D /* OTTPocUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = OTTPocUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		685CF3242DA3978A00D6990D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685CF3362DA3978B00D6990D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685CF3402DA3978B00D6990D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		685CF31E2DA3978900D6990D = {
+			isa = PBXGroup;
+			children = (
+				685CF3292DA3978A00D6990D /* OTTPoc */,
+				685CF33C2DA3978B00D6990D /* OTTPocTests */,
+				685CF3462DA3978B00D6990D /* OTTPocUITests */,
+				685CF3282DA3978A00D6990D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		685CF3282DA3978A00D6990D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				685CF3272DA3978A00D6990D /* OTTPoc.app */,
+				685CF3392DA3978B00D6990D /* OTTPocTests.xctest */,
+				685CF3432DA3978B00D6990D /* OTTPocUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		685CF3262DA3978A00D6990D /* OTTPoc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685CF34D2DA3978B00D6990D /* Build configuration list for PBXNativeTarget "OTTPoc" */;
+			buildPhases = (
+				685CF3232DA3978A00D6990D /* Sources */,
+				685CF3242DA3978A00D6990D /* Frameworks */,
+				685CF3252DA3978A00D6990D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				685CF3292DA3978A00D6990D /* OTTPoc */,
+			);
+			name = OTTPoc;
+			packageProductDependencies = (
+			);
+			productName = OTTPoc;
+			productReference = 685CF3272DA3978A00D6990D /* OTTPoc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		685CF3382DA3978B00D6990D /* OTTPocTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685CF3502DA3978B00D6990D /* Build configuration list for PBXNativeTarget "OTTPocTests" */;
+			buildPhases = (
+				685CF3352DA3978B00D6990D /* Sources */,
+				685CF3362DA3978B00D6990D /* Frameworks */,
+				685CF3372DA3978B00D6990D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				685CF33B2DA3978B00D6990D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				685CF33C2DA3978B00D6990D /* OTTPocTests */,
+			);
+			name = OTTPocTests;
+			packageProductDependencies = (
+			);
+			productName = OTTPocTests;
+			productReference = 685CF3392DA3978B00D6990D /* OTTPocTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		685CF3422DA3978B00D6990D /* OTTPocUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 685CF3532DA3978B00D6990D /* Build configuration list for PBXNativeTarget "OTTPocUITests" */;
+			buildPhases = (
+				685CF33F2DA3978B00D6990D /* Sources */,
+				685CF3402DA3978B00D6990D /* Frameworks */,
+				685CF3412DA3978B00D6990D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				685CF3452DA3978B00D6990D /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				685CF3462DA3978B00D6990D /* OTTPocUITests */,
+			);
+			name = OTTPocUITests;
+			packageProductDependencies = (
+			);
+			productName = OTTPocUITests;
+			productReference = 685CF3432DA3978B00D6990D /* OTTPocUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		685CF31F2DA3978900D6990D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					685CF3262DA3978A00D6990D = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					685CF3382DA3978B00D6990D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 685CF3262DA3978A00D6990D;
+					};
+					685CF3422DA3978B00D6990D = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 685CF3262DA3978A00D6990D;
+					};
+				};
+			};
+			buildConfigurationList = 685CF3222DA3978900D6990D /* Build configuration list for PBXProject "OTTPoc" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 685CF31E2DA3978900D6990D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 685CF3282DA3978A00D6990D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				685CF3262DA3978A00D6990D /* OTTPoc */,
+				685CF3382DA3978B00D6990D /* OTTPocTests */,
+				685CF3422DA3978B00D6990D /* OTTPocUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		685CF3252DA3978A00D6990D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685CF3372DA3978B00D6990D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685CF3412DA3978B00D6990D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		685CF3232DA3978A00D6990D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685CF3352DA3978B00D6990D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		685CF33F2DA3978B00D6990D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		685CF33B2DA3978B00D6990D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 685CF3262DA3978A00D6990D /* OTTPoc */;
+			targetProxy = 685CF33A2DA3978B00D6990D /* PBXContainerItemProxy */;
+		};
+		685CF3452DA3978B00D6990D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 685CF3262DA3978A00D6990D /* OTTPoc */;
+			targetProxy = 685CF3442DA3978B00D6990D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		685CF34B2DA3978B00D6990D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Debug;
+		};
+		685CF34C2DA3978B00D6990D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = appletvos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		685CF34E2DA3978B00D6990D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OTTPoc/Preview Content\"";
+				DEVELOPMENT_TEAM = 45W9KK4RQR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OTTPoc.OTTPoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		685CF34F2DA3978B00D6990D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"OTTPoc/Preview Content\"";
+				DEVELOPMENT_TEAM = 45W9KK4RQR;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OTTPoc.OTTPoc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Release;
+		};
+		685CF3512DA3978B00D6990D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45W9KK4RQR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OTTPoc.OTTPocTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OTTPoc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OTTPoc";
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Debug;
+		};
+		685CF3522DA3978B00D6990D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45W9KK4RQR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OTTPoc.OTTPocTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OTTPoc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OTTPoc";
+				TVOS_DEPLOYMENT_TARGET = 18.2;
+			};
+			name = Release;
+		};
+		685CF3542DA3978B00D6990D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45W9KK4RQR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OTTPoc.OTTPocUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = OTTPoc;
+			};
+			name = Debug;
+		};
+		685CF3552DA3978B00D6990D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45W9KK4RQR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = OTTPoc.OTTPocUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = OTTPoc;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		685CF3222DA3978900D6990D /* Build configuration list for PBXProject "OTTPoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685CF34B2DA3978B00D6990D /* Debug */,
+				685CF34C2DA3978B00D6990D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		685CF34D2DA3978B00D6990D /* Build configuration list for PBXNativeTarget "OTTPoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685CF34E2DA3978B00D6990D /* Debug */,
+				685CF34F2DA3978B00D6990D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		685CF3502DA3978B00D6990D /* Build configuration list for PBXNativeTarget "OTTPocTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685CF3512DA3978B00D6990D /* Debug */,
+				685CF3522DA3978B00D6990D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		685CF3532DA3978B00D6990D /* Build configuration list for PBXNativeTarget "OTTPocUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				685CF3542DA3978B00D6990D /* Debug */,
+				685CF3552DA3978B00D6990D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 685CF31F2DA3978900D6990D /* Project object */;
+}
