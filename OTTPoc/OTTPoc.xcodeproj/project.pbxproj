@@ -29,9 +29,30 @@
 		685CF3432DA3978B00D6990D /* OTTPocUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OTTPocUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DE0531FF2DA6590D00E6AC84 /* Exceptions for "OTTPoc" folder in "OTTPocTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Registration/SignUpView.swift,
+			);
+			target = 685CF3382DA3978B00D6990D /* OTTPocTests */;
+		};
+		DE0532002DA6590D00E6AC84 /* Exceptions for "OTTPoc" folder in "OTTPocUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Registration/SignUpView.swift,
+			);
+			target = 685CF3422DA3978B00D6990D /* OTTPocUITests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		685CF3292DA3978A00D6990D /* OTTPoc */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DE0531FF2DA6590D00E6AC84 /* Exceptions for "OTTPoc" folder in "OTTPocTests" target */,
+				DE0532002DA6590D00E6AC84 /* Exceptions for "OTTPoc" folder in "OTTPocUITests" target */,
+			);
 			path = OTTPoc;
 			sourceTree = "<group>";
 		};
