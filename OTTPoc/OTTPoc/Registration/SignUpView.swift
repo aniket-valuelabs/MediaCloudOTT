@@ -12,7 +12,7 @@ struct RegistrationView: View {
     @State private var lastName = ""
     @State private var dob: Date = Date()
     @State private var email = ""
-    @State private var mobileNumber = ""
+    @State private var mobileNumber = "9600474273"
     
     @State private var errorMessage: String?
     
