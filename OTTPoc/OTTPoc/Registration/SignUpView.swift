@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegistrationView: View {
+struct SignUpView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var dob: Date = Date()
@@ -56,6 +56,13 @@ struct RegistrationView: View {
             .alert(isPresented: Binding<Bool>.constant(errorMessage != nil)) {
                 Alert(title: Text("Error"), message: Text(errorMessage ?? ""), dismissButton: .default(Text("OK")))
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(
+                LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.5), Color.green.opacity(0.5)]),
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
+            )
+            .edgesIgnoringSafeArea(.all)
         }
     }
     
@@ -90,6 +97,6 @@ struct RegistrationView: View {
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        SignUpView()
     }
 }
