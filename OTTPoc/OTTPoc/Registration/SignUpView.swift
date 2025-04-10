@@ -42,8 +42,8 @@ struct SignUpView: View {
                     Button(action: {
                         if validateInputs() {
                             // Proceed with registration logic here
-
                         saveUser()
+                        clearFields()
                         print("Registration successful!")
                         } else {
                             // Display error message
@@ -102,6 +102,14 @@ struct SignUpView: View {
         let newUser = User(firstName: firstName, lastName: lastName, dob: dob, email: email, mobileNumber: mobileNumber)
         modelContext.insert(newUser)
         try? modelContext.save()
+    }
+    func clearFields() {
+        firstName = ""
+        lastName = ""
+        dob = Date()
+        email = ""
+        mobileNumber = ""
+        errorMessage = nil
     }
 }
 
