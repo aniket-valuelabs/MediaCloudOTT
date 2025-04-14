@@ -64,7 +64,7 @@ struct SignUpView: View {
                         TextField("Mobile Number", text: $mobileNumber)
                             .customTextFieldStyle(isFocused: focusedField == .mobileNumber)
                             .keyboardType(.numberPad)
-                            .focused($focusedField, equals: .mobileNumber)
+                            .focused($focusedField, equals: .registerButton)
                             .submitLabel(.done)
                         Section {
                             Button("Sign Up") {
