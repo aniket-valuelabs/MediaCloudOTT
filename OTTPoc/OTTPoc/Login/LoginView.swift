@@ -96,7 +96,7 @@ struct LoginView: View {
                     //HomeView()
                 }
                 .navigationDestination(isPresented: $navigateToRegister) {
-                    //RegisterView()
+                    SignUpView()
                 }
             }
         }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegistrationView: View {
+struct SignUpView: View {
     @State private var firstName = ""
     @State private var lastName = ""
     @State private var dob: Date = Date()
@@ -90,6 +90,6 @@ struct RegistrationView: View {
 
 struct RegistrationView_Previews: PreviewProvider {
     static var previews: some View {
-        RegistrationView()
+        SignUpView()
     }
 }
