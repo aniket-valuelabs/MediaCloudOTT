@@ -12,7 +12,7 @@ struct SignUpView: View {
     @State private var lastName = ""
     @State private var dob: Date = Date()
     @State private var email = ""
-    @State private var mobileNumber = "9600474273"
+    @State private var mobileNumber = ""
     
     @State private var errorMessage: String?
     
@@ -28,97 +28,66 @@ struct SignUpView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 30) {
-                Text("Sign Up")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .multilineTextAlignment(.center)
-                
-                Form {
-                    Section(header: Text("Personal Information").foregroundColor(.white)) {
+            ZStack {
+                LinearGradient(colors: [Color.green.opacity(0.8), Color.yellow.opacity(0.7), Color.teal.opacity(0.9)],
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                VStack(spacing: 30) {
+                    Text("Sign Up")
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
+                    VStack(spacing: 35) {
                         TextField("First Name", text: $firstName)
-                            .textFieldStyle(DefaultTextFieldStyle())
-                            .padding()
-                            .background(Color.white.opacity(0.2))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .customTextFieldStyle(isFocused:focusedField == .firstName)
                             .focused($focusedField, equals: .firstName)
                             .submitLabel(.next)
                             .onSubmit { focusedField = .lastName }
                         
                         TextField("Last Name", text: $lastName)
-                            .textFieldStyle(DefaultTextFieldStyle())
-                            .padding()
-                            .background(Color.white.opacity(0.2))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .customTextFieldStyle(isFocused:focusedField == .lastName)
                             .focused($focusedField, equals: .lastName)
                             .submitLabel(.next)
                             .onSubmit { focusedField = .email }
                         
                         TextField("Email", text: $email)
-                            .textFieldStyle(DefaultTextFieldStyle())
-                            .padding()
-                            .background(Color.white.opacity(0.2))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .customTextFieldStyle(isFocused:focusedField == .email)
                             .keyboardType(.emailAddress)
                             .focused($focusedField, equals: .email)
                             .submitLabel(.next)
                             .onSubmit { focusedField = .mobileNumber }
                         
                         TextField("Mobile Number", text: $mobileNumber)
-                            .textFieldStyle(DefaultTextFieldStyle())
-                            .padding()
-                            .background(Color.white.opacity(0.2))
-                            .foregroundColor(.white)
-                            .cornerRadius(10)
+                            .customTextFieldStyle(isFocused: focusedField == .mobileNumber)
                             .keyboardType(.numberPad)
                             .focused($focusedField, equals: .mobileNumber)
                             .submitLabel(.done)
-                    }
-                    
-                    Section {
-                        Button(action: {
-                            if validateInputs() {
-                                // Proceed with registration logic here
-                                print("Registration successful!")
-                            } else {
-                                // Display error message
+                        Section {
+                            Button("Login") {
+                                if validateInputs() {
+                                    print("Registration successful!")
+                                } else {}
                             }
-                        }) {
-                            Text("Register")
-                                .padding()
-                                .background(Color.blue)
-                                .foregroundColor(.white)
-                                .cornerRadius(8)
+                            .frame(width: 300, height: 70)
+                            .buttonStyle(.borderedProminent)
+                            .focused($focusedField, equals: .registerButton)
                         }
-                        .focused($focusedField, equals: .registerButton)
-                    }
+                        
+                    }.padding(.top)
                 }
-                .padding(.top)
-                
-                if let errorMessage = errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.red)
-                        .padding(.top)
-                }
-                
                 Spacer()
-            }
-            .onAppear {
-                focusedField = .firstName
-            }
-            .onMoveCommand { direction in
-                handleRemoteNavigation(direction)
-            }
-            .background(
-                LinearGradient(colors: [Color.green, Color.yellow], startPoint: .topLeading, endPoint: .bottomTrailing)
-                    .ignoresSafeArea()
-            )
-            .alert(isPresented: Binding<Bool>.constant(errorMessage != nil)) {
-                Alert(title: Text("Error"), message: Text(errorMessage ?? ""), dismissButton: .default(Text("OK")))
+                    .onAppear {
+                        focusedField = .firstName
+                    }
+                    .onMoveCommand { direction in
+                        handleRemoteNavigation(direction)
+                    }
+                    .alert(isPresented: Binding<Bool>.constant(errorMessage != nil)) {
+                        Alert(title: Text("Error"), message: Text(errorMessage ?? ""), dismissButton: .default(Text("OK")))
+                    }
             }
         }
     }
@@ -183,3 +152,24 @@ struct RegistrationView_Previews: PreviewProvider {
         SignUpView()
     }
 }
+
+//CustomTextfield Modifier
+struct CustomTextFieldStyle: ViewModifier {
+    var isFocused : Bool
+    func body(content: Content) -> some View {
+        content
+            .textFieldStyle(DefaultTextFieldStyle())
+            .padding()
+            .frame(width: 800, height: 60)
+            .background(Color.white.opacity(0.2))
+            .foregroundColor(isFocused ? .black : .white)
+            .cornerRadius(10)
+    }
+}
+
+extension View {
+    func customTextFieldStyle(isFocused:Bool) -> some View {
+        self.modifier(CustomTextFieldStyle(isFocused:isFocused))
+    }
+}
+
