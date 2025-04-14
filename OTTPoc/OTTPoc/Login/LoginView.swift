@@ -10,109 +10,129 @@ import SwiftUI
 struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
-    @State private var showPassword = false
     @State private var showValidationError: Bool = false
-    @State private var isLoggedIn: Bool = false
     @FocusState private var focusedField: Field?
-    
-    enum Field {
-        case username
-        case password
-        case loginButton
+    @State private var navigateToHome = false
+    @State private var navigateToRegister = false
+
+    enum Field: Hashable {
+        case username, password, loginButton, registerButton
     }
-    
+
     var body: some View {
-            VStack(spacing: 40) {
-                Text("Login")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                
-                VStack(spacing: 30) {
-                    TextField("Username", text: $username)
-                        .padding()
-                        .background(Color.white.opacity(0.2))
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .padding(.horizontal)
-                        .focused($focusedField, equals: .username)
-                        .submitLabel(.next)
-                    
-                    SecureField("Password", text: $password)
-                        .padding()
-                        .background(Color.white.opacity(0.2))
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .padding(.horizontal)
-                        .focused($focusedField, equals: .password)
-                        .submitLabel(.done)
-                }
-                
-                if showValidationError {
-                    Text("Username and Password are required.")
-                        .foregroundColor(.red)
-                }
-                
-                Button("Login") {
-                    validateAndLogin()
-                }
-                .disabled(username.isEmpty || password.isEmpty)
-                .buttonStyle(.borderedProminent)
-                .focused($focusedField, equals: .loginButton)
-                
-                Spacer()
-            }
-            .padding()
-            .onAppear {
-                focusedField = .username
-            }
-            .onMoveCommand { direction in
-                switch direction {
-                case .down:
-                    switch focusedField {
-                    case .username:
-                        focusedField = .password
-                    case .password:
-                        focusedField = .loginButton
-                    default:
-                        break
-                    }
-                case .up:
-                    switch focusedField {
-                    case .loginButton:
-                        focusedField = .password
-                    case .password:
-                        focusedField = .username
-                    default:
-                        break
-                    }
-                default:
-                    break
-                }
-            }
-            .background(
-                LinearGradient(
-                    colors: [Color.blue, Color.purple],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
+        NavigationStack {
+            ZStack {
+                LinearGradient(colors: [Color.green.opacity(0.8), Color.yellow.opacity(0.7), Color.teal.opacity(0.9)],
+                                   startPoint: .topLeading,
+                                   endPoint: .bottomTrailing
                 )
                 .ignoresSafeArea()
-            )
+                
+                VStack(spacing: 50) {
+                    Text("Welcome to MediaStreaming App")
+                        .font(.system(size: 60, weight: .bold))
+                        .foregroundColor(.white)
+                    
+                    VStack(spacing: 35) {
+                        TextField("Username", text: $username)
+                            .textContentType(.username)
+                            .padding()
+                            .frame(width: 800, height: 60)
+                            .background(Color.white.opacity(0.15))
+                            .cornerRadius(12)
+                            .foregroundColor(.white)
+                            .focused($focusedField, equals: .username)
+                            .submitLabel(.next)
+                            .onSubmit {
+                                focusedField = .password
+                            }
+                        
+                        SecureField("Password", text: $password)
+                            .textContentType(.password)
+                            .padding()
+                            .frame(width: 800, height: 60)
+                            .background(Color.white.opacity(0.15))
+                            .cornerRadius(12)
+                            .foregroundColor(.white)
+                            .focused($focusedField, equals: .password)
+                            .submitLabel(.done)
+                            .onSubmit {
+                                focusedField = .loginButton
+                            }
+                    }
+                    
+                    if showValidationError {
+                        Text("Please enter both username and password.")
+                            .foregroundColor(.red)
+                            .font(.title2)
+                    }
+                    
+                    HStack(spacing: 20) {
+                        Button("Login") {
+                            handleLogin()
+                        }
+                        .frame(width: 300, height: 70)
+                        .buttonStyle(.borderedProminent)
+                        .focused($focusedField, equals: .loginButton)
+                        
+                        Button("Register") {
+                            navigateToRegister = true
+                        }
+                        .frame(width: 300, height: 70)
+                        .buttonStyle(.bordered)
+                        .focused($focusedField, equals: .registerButton)
+                    }
+                    
+                    Spacer()
+                }
+                .padding(.top, 100)
+                .onAppear {
+                    focusedField = .username
+                }
+                .onMoveCommand(perform: handleRemoteNavigation)
+                    .background(Color.clear)
+            
+                .navigationDestination(isPresented: $navigateToHome) {
+                    //HomeView()
+                }
+                .navigationDestination(isPresented: $navigateToRegister) {
+                    //RegisterView()
+                }
+            }
         }
-    
-    private func validateAndLogin() {
+    }
+
+    private func handleLogin() {
         if username.isEmpty || password.isEmpty {
             showValidationError = true
         } else {
             showValidationError = false
-            isLoggedIn = true
-            // Add your login logic here
+            navigateToHome = true
         }
     }
-}
 
+    private func handleRemoteNavigation(_ direction: MoveCommandDirection) {
+        guard let current = focusedField else { return }
 
-
-#Preview {
-    LoginView()
+        switch direction {
+        case .down:
+            if current == .username {
+                focusedField = .password
+            } else if current == .password {
+                focusedField = .loginButton
+            } else if current == .loginButton {
+                focusedField = .registerButton
+            }
+        case .up:
+            if current == .registerButton {
+                focusedField = .loginButton
+            } else if current == .loginButton {
+                focusedField = .password
+            } else if current == .password {
+                focusedField = .username
+            }
+        default:
+            break
+        }
+    }
 }
