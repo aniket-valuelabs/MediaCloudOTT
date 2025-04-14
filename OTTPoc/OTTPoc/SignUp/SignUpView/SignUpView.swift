@@ -17,6 +17,7 @@ struct SignUpView: View {
     @State private var errorMessage: String?
     
     @FocusState private var focusedField: Field?
+    @Environment(\.modelContext) private var modelContext
     
     enum Field: Hashable {
         case firstName
@@ -66,8 +67,10 @@ struct SignUpView: View {
                             .focused($focusedField, equals: .mobileNumber)
                             .submitLabel(.done)
                         Section {
-                            Button("Login") {
+                            Button("Sign Up") {
                                 if validateInputs() {
+                                    saveUser()
+                                    clearFields()
                                     print("Registration successful!")
                                 } else {}
                             }
@@ -144,6 +147,19 @@ struct SignUpView: View {
         default:
             break
         }
+    }
+    func saveUser() {
+        let newUser = User(firstName: firstName, lastName: lastName, dob: dob, email: email, mobileNumber: mobileNumber)
+        modelContext.insert(newUser)
+        try? modelContext.save()
+    }
+    func clearFields() {
+        firstName = ""
+        lastName = ""
+        dob = Date()
+        email = ""
+        mobileNumber = ""
+        errorMessage = nil
     }
 }
 

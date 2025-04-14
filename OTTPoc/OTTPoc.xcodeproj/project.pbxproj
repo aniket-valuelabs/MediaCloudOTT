@@ -33,14 +33,14 @@
 		DE0531FF2DA6590D00E6AC84 /* Exceptions for "OTTPoc" folder in "OTTPocTests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Registration/SignUpView.swift,
+				SignUp/SignUpView/SignUpView.swift,
 			);
 			target = 685CF3382DA3978B00D6990D /* OTTPocTests */;
 		};
 		DE0532002DA6590D00E6AC84 /* Exceptions for "OTTPoc" folder in "OTTPocUITests" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Registration/SignUpView.swift,
+				SignUp/SignUpView/SignUpView.swift,
 			);
 			target = 685CF3422DA3978B00D6990D /* OTTPocUITests */;
 		};
