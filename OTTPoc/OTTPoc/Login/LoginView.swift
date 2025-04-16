@@ -83,7 +83,7 @@ struct LoginView: View {
             .onAppear {
                 focusedField = .username
             }
-            .onMoveCommand(perform: handleRemoteNavigation)
+//            .onMoveCommand(perform: handleRemoteNavigation)
             .background(Color.clear)
             
             .navigationDestination(isPresented: $navigateToHome) {
