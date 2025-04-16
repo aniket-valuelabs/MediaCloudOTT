@@ -29,12 +29,6 @@ struct SignUpView: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                LinearGradient(colors: [Color.green.opacity(0.8), Color.yellow.opacity(0.7), Color.teal.opacity(0.9)],
-                               startPoint: .topLeading,
-                               endPoint: .bottomTrailing
-                )
-                .ignoresSafeArea()
                 VStack(spacing: 30) {
                     Text("Sign Up")
                         .font(.largeTitle)
@@ -93,7 +87,7 @@ struct SignUpView: View {
                     }
             }
         }
-    }
+    
     
     private func validateInputs() -> Bool {
         guard !firstName.isEmpty, !lastName.isEmpty, !email.isEmpty, !mobileNumber.isEmpty else {
