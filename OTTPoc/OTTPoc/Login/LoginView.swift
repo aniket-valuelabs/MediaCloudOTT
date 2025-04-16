@@ -24,15 +24,14 @@ struct LoginView: View {
             
             VStack(spacing: 50) {
                 Text("Welcome to MediaStreaming App")
-                    .font(.system(size: 60, weight: .bold))
+                    .font(.system(size: 45, weight: .bold))
                     .foregroundColor(.white)
-                
+                    .padding(.bottom, 20)
                 VStack(spacing: 35) {
                     TextField("Username", text: $username)
                         .textContentType(.username)
                         .padding()
                         .frame(width: 800, height: 60)
-                        .background(Color.white.opacity(0.15))
                         .cornerRadius(12)
                         .foregroundColor(.white)
                         .focused($focusedField, equals: .username)
@@ -40,12 +39,15 @@ struct LoginView: View {
                         .onSubmit {
                             focusedField = .password
                         }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.white, lineWidth: 2)
+                        )
                     
                     SecureField("Password", text: $password)
                         .textContentType(.password)
                         .padding()
                         .frame(width: 800, height: 60)
-                        .background(Color.white.opacity(0.15))
                         .cornerRadius(12)
                         .foregroundColor(.white)
                         .focused($focusedField, equals: .password)
@@ -53,6 +55,10 @@ struct LoginView: View {
                         .onSubmit {
                             focusedField = .loginButton
                         }
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.white, lineWidth: 2)
+                        )
                 }
                 
                 if showValidationError {
@@ -93,7 +99,10 @@ struct LoginView: View {
             .navigationDestination(isPresented: $navigateToRegister) {
                 SignUpView()
             }
+           
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+       .edgesIgnoringSafeArea(.all)
     }
 
     private func handleLogin() {
