@@ -171,9 +171,12 @@ struct CustomTextFieldStyle: ViewModifier {
             .textFieldStyle(DefaultTextFieldStyle())
             .padding()
             .frame(width: 800, height: 60)
-            .background(Color.white.opacity(0.2))
             .foregroundColor(isFocused ? .black : .white)
             .cornerRadius(10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.white, lineWidth: 2)
+            )
     }
 }
 
