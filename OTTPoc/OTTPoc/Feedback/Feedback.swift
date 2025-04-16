@@ -43,13 +43,15 @@ struct Feedback: View {
                             rating = number
                         }) {
                             Image(systemName: "star.fill")
-                                .foregroundColor(number <= rating ? .yellow : .gray)
+                                .resizable()
                                 .frame(width: 40, height: 40)
+                                .foregroundColor(number <= rating ? .yellow : .gray)
                         }
                         .buttonStyle(.plain)
-                        //.focusable(true)
+                        .focusable(true)
                     }
                 }
+
                 //.padding()
                 
                 TextView(comments: $comments)
@@ -64,7 +66,7 @@ struct Feedback: View {
 
                 Button(action: submitForm) {
                     Text("Submit Feedback")
-                        .frame(maxWidth: .infinity, minHeight: 60)
+                        .frame(maxWidth: 400, minHeight: 60)
                         .foregroundColor(.white)
                 }
                 .background(Color.clear)
@@ -100,7 +102,7 @@ struct TextView: UIViewRepresentable {
     @Binding var comments: String
 
     func makeUIView(context: Context) -> UITextView {
-        let textView = UITextView()
+        let textView = FocusableTextView()
         textView.delegate = context.coordinator
         textView.font = UIFont.systemFont(ofSize: 32)
         textView.backgroundColor = UIColor(white: 0.2, alpha: 0.3)
@@ -156,6 +158,16 @@ struct TextView: UIViewRepresentable {
             parent.comments = textView.text
             placeholderLabel?.isHidden = !textView.text.isEmpty
         }
+    }
+}
+
+class FocusableTextView: UITextView {
+    override var canBecomeFocused: Bool {
+        return true
+    }
+
+    override var canBecomeFirstResponder: Bool {
+        return true
     }
 }
 
