@@ -23,11 +23,13 @@ struct Feedback: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
+                    .padding(.bottom, 50)
                 Group {
-                    TextField("Name", text: $userName)
-                    TextField("Email", text: $userEmail)
-                }
-                .frame(height: 60)
+                    Group {
+                        TextField("Name", text: $userName)
+                        TextField("Email", text: $userEmail)
+                    }
+                    .frame(height: 60)
                     .padding(.horizontal)
                     .background(Color.clear)
                     .overlay(
@@ -36,52 +38,50 @@ struct Feedback: View {
                     )
                     .cornerRadius(12)
                     .foregroundColor(.white)
-                
-                HStack(spacing: 15) {
-                    ForEach(1...5, id: \.self) { number in
-                        Button(action: {
-                            rating = number
-                        }) {
-                            Image(systemName: "star.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(number <= rating ? .yellow : .gray)
+                    
+                    HStack(spacing: 15) {
+                        ForEach(1...5, id: \.self) { number in
+                            Button(action: {
+                                rating = number
+                            }) {
+                                Image(systemName: "star.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(number <= rating ? .yellow : .gray)
+                            }
+                            .buttonStyle(.plain)
+                            .focusable(true)
                         }
-                        .buttonStyle(.plain)
-                        .focusable(true)
                     }
-                }
-
-                //.padding()
-                
-                TextView(comments: $comments)
-                    .frame(height: 200)
-                    .padding(.horizontal)
-                    .background(.clear)
+                                        
+                    TextView(comments: $comments)
+                        .frame(height: 200)
+                        .padding(.horizontal)
+                        .background(.clear)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 12)
+                                .stroke(Color.white, lineWidth: 2)
+                        )
+                        .cornerRadius(12)
+                    
+                    Button(action: submitForm) {
+                        Text("Submit Feedback")
+                            .frame(maxWidth: 400, minHeight: 60)
+                            .foregroundColor(.white)
+                    }
+                    .background(Color.clear)
                     .overlay(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .stroke(Color.white, lineWidth: 2)
-                            )
-                            .cornerRadius(12)
-
-                Button(action: submitForm) {
-                    Text("Submit Feedback")
-                        .frame(maxWidth: 400, minHeight: 60)
-                        .foregroundColor(.white)
+                        RoundedRectangle(cornerRadius: 12)
+                            .stroke(Color.white, lineWidth: 2)
+                    )
+                    .cornerRadius(12)
+                    .padding(.horizontal)
                 }
-                .background(Color.clear)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 12)
-                        .stroke(Color.white, lineWidth: 2)
-                )
-                .cornerRadius(12)
-                .padding(.horizontal)
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text(alertMessage))
+                }
             }
-            .padding(40)
-            .navigationTitle("Feedback")
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text(alertMessage))
-            }
+                
         }
     }
 
