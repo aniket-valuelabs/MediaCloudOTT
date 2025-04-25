@@ -53,17 +53,13 @@ struct MovieDetail: View {
                     .padding()
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 }
-                
                 // Top-right aligned info icon
-                Button(action: {
-                    print("Info tapped")
+                Button {
                     navigateToFeedBack = true
-                }) {
-                    Image(systemName: "info.circle")
-                        .font(.title2)
-                        .padding()
-                        
-                }.clipShape(.circle)
+                } label: {
+                    Text("Give Feedback")
+                        .font(.subheadline)
+                }
             }
             .navigationTitle("Movie Detail")
         }
