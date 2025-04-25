@@ -15,7 +15,8 @@ struct Feedback: View {
     @State private var comments = ""
     @State private var showAlert = false
     @State private var alertMessage = ""
-
+    @State private var isSubmitting = false
+    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 30) {
@@ -53,7 +54,7 @@ struct Feedback: View {
                             .focusable(true)
                         }
                     }
-                                        
+                    
                     TextView(comments: $comments)
                         .frame(height: 200)
                         .padding(.horizontal)
@@ -81,21 +82,71 @@ struct Feedback: View {
                     Alert(title: Text(alertMessage))
                 }
             }
-                
+            
         }
     }
-
+    
+    
     func submitForm() {
-        if userName.isEmpty {
+        guard !userName.isEmpty else {
             alertMessage = "Please enter your name."
             showAlert = true
             return
         }
         
-        // Here you can add your logic to send the feedback to a server or save it locally.
-        alertMessage = "Thank you for your feedback!"
-        showAlert = true
+        guard !userEmail.isEmpty else {
+            alertMessage = "Please enter your email."
+            showAlert = true
+            return
+        }
+        
+        guard isValidEmail(userEmail) else {
+            alertMessage = "Please enter a valid email address."
+            showAlert = true
+            return
+        }
+        
+        isSubmitting = true
+        
+        let url = URL(string: "https://api.emailjs.com/api/v1.0/email/send")!
+        let payload: [String: Any] = [
+            "service_id": "service_46f1t6d",
+            "template_id": "template_zzgb1q9",
+            "user_id": "tLt5hG9jsKmKGybHz",
+            "template_params": [
+                "user_name": userName,
+                "user_email": "aniketk561@gmail.com",
+                "user_rating": rating,
+                "user_comments": "It was awsm watching the videos"
+            ]
+        ]
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: payload)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                isSubmitting = false
+                if let error = error {
+                    alertMessage = "Failed to send feedback: \(error.localizedDescription)"
+                } else {
+                    alertMessage = "Thank you for your feedback!"
+                    userName = ""
+                    userEmail = ""
+                    comments = ""
+                    rating = 5
+                }
+                showAlert = true
+            }
+        }.resume()
     }
+}
+
+func isValidEmail(_ email: String) -> Bool {
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    return NSPredicate(format: "SELF MATCHES %@", emailRegEx).evaluate(with: email)
 }
 
 struct TextView: UIViewRepresentable {
